@@ -75,7 +75,34 @@ public class MyGenericsTest {
         for(int idx=0; idx < expectedResult.length; idx++) {
             assertEquals(expectedResult[idx], india[idx]);
         }
-
     }
 
+    @Test
+    void test_findMaximalElementIntegers() {
+        ArrayList<Double> empty = new ArrayList<>();
+        ArrayList<Integer> india = new ArrayList<>();
+        india.add(1);
+        india.add(3);
+        india.add(5);
+        india.add(24);
+        india.add(6);
+
+        var start = 2;
+        var end = 4;
+
+        var expectedIndex = 0;
+        var actualIndexOfMaxElement = MyGenerics.findMaximalElement(empty, start, end);
+        assertEquals(expectedIndex, actualIndexOfMaxElement);
+
+        expectedIndex = 3;
+        actualIndexOfMaxElement = MyGenerics.findMaximalElement(india, start, end);
+        assertEquals(expectedIndex, actualIndexOfMaxElement);
+
+        start = 0;
+        end = 2;
+
+        expectedIndex = 2;
+        actualIndexOfMaxElement = MyGenerics.findMaximalElement(india, start, end);
+        assertEquals(expectedIndex, actualIndexOfMaxElement);
+    }
 }
